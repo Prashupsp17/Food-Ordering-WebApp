@@ -1,10 +1,10 @@
-import {restrautList} from "../contants";
+// import {restrautList} from "../contants";
 import RestaurantCard from "./RestaurantCard";
 import {useState , useEffect} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
-import { filterData } from "../utils/Helper";
+// import { filterData } from "../utils/Helper";
 import Slider from "react-slick";
 import search from "../images/search.png";
 
