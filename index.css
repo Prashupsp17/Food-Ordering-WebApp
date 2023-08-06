@@ -81,6 +81,10 @@ li a{
     flex-wrap: wrap;
     width:100%;
     gap: 10px;
+    text-decoration: none !important;
+}
+.restaurant-list a {
+text-decoration: none !important;
 }
 .shimmer-card{
     width:265px;
