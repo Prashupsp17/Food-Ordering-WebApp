@@ -1,0 +1,11 @@
+# Ignore node_modules folder
+node_modules
+
+# Ignore parcel-cache folder
+.parcel-cache
+
+# Ignore parcel-cache folder
+coverage
+
+# Ignore dist folder
+# dist
