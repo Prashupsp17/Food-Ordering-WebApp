@@ -146,18 +146,20 @@ li a{
     font-size: 15px;
     font-weight: 600;
     line-height:1;
+    color:rgb(27, 27, 27);
 }
 .rest-name a{
-
-    text-decoration: none !important;
+ text-decoration: none !important;
+ color:rgb(27, 27, 27);
 }
 .rest-cusines{
     font-size:12px;
     line-height: 1;
+    color:rgb(27, 27, 27);
 }
 .rest-cusines a{
-    
     text-decoration: none !important;
+    color:rgb(27, 27, 27);
 }
 .slider-wrapper{
     padding: 15px 100px;
