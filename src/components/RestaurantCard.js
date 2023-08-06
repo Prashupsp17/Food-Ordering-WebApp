@@ -7,7 +7,7 @@ import star from "../images/star.png";
 const RestaurantCard = (props) => {
       const {user} = useContext(UserContext);
       return (
-          <div className="card">
+          <div className="resto-card">
               <img src={IMG_CDN_URL + props.resData.cloudinaryImageId}></img>
               <span className="rest-name">{props.resData.name}</span>
               <div className="card-bottom">
