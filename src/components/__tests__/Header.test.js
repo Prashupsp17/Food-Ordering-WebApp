@@ -15,7 +15,7 @@ test("Logo should load on rendering Header", () => {
    
 );
 
-console.log(header);
+// console.log(header);
 });
 
 test("Online Status should be green  on rendering Header", () => {

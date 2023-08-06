@@ -13,7 +13,6 @@ const RestaurantMenu = () => {
   const [restaurant, setRestaurant] = useState(null);
   const [showIndex, setShowIndex] = useState();
     const {resId} = useParams();
-    console.log(resId);
 
     // const  restaurant = useRestaurant(resId);
 
@@ -24,7 +23,6 @@ const RestaurantMenu = () => {
       async function getRestaurantInfo(){
         const data = await fetch(FETCH_MENU_URL + resId);
         const json = await data.json();
-        console.log(json.data.cards);
         setRestaurant(json.data);
       }
     

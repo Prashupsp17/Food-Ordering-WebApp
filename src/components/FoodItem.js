@@ -2,7 +2,6 @@ import {IMG_CDN_URL} from "../contants";
 
 
 const RestaurantCard = (props) => {
-    console.log(props);
       return (
           <div className="card">
               <img src={IMG_CDN_URL + props.card.info.imageId}></img>

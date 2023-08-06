@@ -25,12 +25,12 @@ import bootstrap from "../images/bootstrap.png";
 class About extends React.Component{
     constructor(props){
       super(props);
-      console.log("Parent - Constructor");
+    //   console.log("Parent - Constructor");
 
     }
 
     componentDidMount(){
-        console.log("Parent - CompoonentDidMount");
+        // console.log("Parent - CompoonentDidMount");
     }
 
 

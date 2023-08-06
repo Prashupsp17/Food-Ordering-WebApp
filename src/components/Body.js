@@ -47,7 +47,6 @@ const Body = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isFavRestFilter, setIsFavRestFilter] = useState(false);
   const [check, setCheck] = useState(false);
-  console.log(allRestaurants);
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -64,7 +63,6 @@ const Body = () => {
   };
 
   const handleCheck = (e) => {
-    console.log(e);
     setCheck(e)
   }
   var filteredData = allRestaurants.filter((restaurant) => {

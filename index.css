@@ -36,14 +36,14 @@ li a{
     width: 100px;
     height: 100px;
 }
-.card{
+.resto-card{
     width: 260px;
     height: 255px;
     border: 1px solid #000;
     padding: 10px;
     text-decoration: none !important; 
 }
-.card a{
+.resto-card a{
     text-decoration: none !important; 
 }
 .green {
