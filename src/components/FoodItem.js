@@ -3,7 +3,7 @@ import {IMG_CDN_URL} from "../contants";
 
 const RestaurantCard = (props) => {
       return (
-          <div className="card">
+          <div className="resto-card">
               <img src={IMG_CDN_URL + props.card.info.imageId}></img>
               <span className="rest-name">{props.card.info.name}</span>
               <span className="cart-description">{props.card.info.description}</span>

@@ -39,9 +39,12 @@ li a{
 .resto-card{
     width: 260px;
     height: 255px;
-    border: 1px solid #000;
+    border: 1px solid rgb(209 199 199);;
     padding: 10px;
     text-decoration: none !important; 
+    display:flex;
+    flex-direction: column;
+    gap:5px;
 }
 .resto-card a{
     text-decoration: none !important; 
@@ -58,6 +61,9 @@ li a{
     flex-direction: row;
     gap: 5px;
     
+    
+}
+.green a{
     text-decoration: none !important;
 }
 .card-bottom{
@@ -65,7 +71,7 @@ li a{
     justify-content: space-between;
     align-items: center;
 }
-.card > img {
+.resto-card > img {
     width: 100%;
     border-radius: 10px;
 }
@@ -139,10 +145,18 @@ li a{
 .rest-name{
     font-size: 15px;
     font-weight: 600;
+    line-height:1;
+}
+.rest-name a{
+
     text-decoration: none !important;
 }
 .rest-cusines{
     font-size:12px;
+    line-height: 1;
+}
+.rest-cusines a{
+    
     text-decoration: none !important;
 }
 .slider-wrapper{
@@ -297,6 +311,9 @@ height:100px;
     border-radius: 5px;
     padding: 2px;
     font-size: 10px;
+}
+.orange a{
+
     text-decoration: none !important;
 }
 .contact{
