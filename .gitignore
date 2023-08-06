@@ -8,4 +8,4 @@ node_modules
 coverage
 
 # Ignore dist folder
-# dist
+ dist
