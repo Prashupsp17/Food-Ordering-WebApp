@@ -24,6 +24,8 @@
 }
 li a{
     text-decoration: none !important; 
+    color:black;
+    font-weight:500;
 }
 .logo{
     
@@ -39,6 +41,7 @@ li a{
     height: 255px;
     border: 1px solid #000;
     padding: 10px;
+    text-decoration: none !important; 
 }
 .card a{
     text-decoration: none !important; 
@@ -54,6 +57,8 @@ li a{
     display: flex;
     flex-direction: row;
     gap: 5px;
+    
+    text-decoration: none !important;
 }
 .card-bottom{
     display:flex;
@@ -134,9 +139,11 @@ li a{
 .rest-name{
     font-size: 15px;
     font-weight: 600;
+    text-decoration: none !important;
 }
 .rest-cusines{
     font-size:12px;
+    text-decoration: none !important;
 }
 .slider-wrapper{
     padding: 15px 100px;
@@ -290,6 +297,7 @@ height:100px;
     border-radius: 5px;
     padding: 2px;
     font-size: 10px;
+    text-decoration: none !important;
 }
 .contact{
     display:flex;
