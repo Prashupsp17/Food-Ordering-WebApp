@@ -48,6 +48,16 @@ const Body = () => {
   const [isFavRestFilter, setIsFavRestFilter] = useState(false);
   const [check, setCheck] = useState(false);
 
+  async function getRestaurants(){
+    const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4871462&lng=73.8200227&page_type=DESKTOP_WEB_LISTING");
+    const json = await data.json();
+    
+    setAllRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   
+    setCheckboxFilter(json?.data?.cards[4]?.card?.card?.facetList[1]?.facetInfo);
+      
+  }
+
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -65,33 +75,27 @@ const Body = () => {
   const handleCheck = (e) => {
     setCheck(e)
   }
-  var filteredData = allRestaurants.filter((restaurant) => {
-    const nameMatch = restaurant?.info?.name?.toLowerCase().includes(searchTerm.toLowerCase());
-   const TopRatedRestaurants =  check ?  restaurant?.info?.avgRating > 4.3 : allRestaurants
-    const categoryMatch = selectedCategories.length === 0 ? "No Matched Restaurants Found" : restaurant?.info?.cuisines?.some((cuisine) => selectedCategories.includes(cuisine));
 
-    return nameMatch && categoryMatch && TopRatedRestaurants;
-  });
+  if(!allRestaurants){
+    return null;
+  }else{
+    var filteredData = allRestaurants.filter((restaurant) => {
+      const nameMatch = restaurant?.info?.name?.toLowerCase().includes(searchTerm.toLowerCase());
+     const TopRatedRestaurants =  check ?  restaurant?.info?.avgRating > 4.3 : allRestaurants;
+      const categoryMatch = selectedCategories.length === 0 ? "No Matched Restaurants Found" : restaurant?.info?.cuisines?.some((cuisine) => selectedCategories.includes(cuisine));
+      return nameMatch && categoryMatch && TopRatedRestaurants;
+    });
+  }
+
+  
+ 
   
   useEffect(() => {
     getRestaurants();
   },[]);
   
   // console.log("render");
-  async function getRestaurants(){
-    const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4871462&lng=73.8200227&page_type=DESKTOP_WEB_LISTING");
-    const json = await data.json();
-    // console.log(json);
-    
-      // json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants,
-    setAllRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    // setFilteredRestaurants(
-    //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants,
-    //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    //   );
-    setCheckboxFilter(json?.data?.cards[4]?.card?.card?.facetList[1]?.facetInfo);
-      
-  }
+
 
   // const filterData = (e) => {
   //  setFilteredRestaurants(allRestaurants.filter(restaurant => restaurant?.data?.name?.includes(e.target.value)));
@@ -102,7 +106,7 @@ const Body = () => {
   const isOnline = useOnline();
 
   if(!isOnline){
-    return <h1> 😈 Offline, Please Check Your Internet Connection!!</h1>
+    return <div className="network-error"> 😈 Offline, Please Check Your Internet Connection!!</div>
   }
    
   //Not render component or early return
