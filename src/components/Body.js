@@ -47,16 +47,76 @@ const Body = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isFavRestFilter, setIsFavRestFilter] = useState(false);
   const [check, setCheck] = useState(false);
+  console.log(checkboxfilters);
 
-  async function getRestaurants(){
-    const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4871462&lng=73.8200227&page_type=DESKTOP_WEB_LISTING");
-    const json = await data.json();
+  // async function getRestaurants(){
+  //   const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4871462&lng=73.8200227&page_type=DESKTOP_WEB_LISTING");
+  //   const json = await data.json();
     
-    setAllRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  //   setAllRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
    
-    setCheckboxFilter(json?.data?.cards[4]?.card?.card?.facetList[1]?.facetInfo);
+    
       
+  // }
+  async function getRestaurants() {
+    // handle the error using try... catch
+    try {
+      const response = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4871462&lng=73.8200227&page_type=DESKTOP_WEB_LISTING");
+      const json = await response.json();
+
+      // initialize checkJsonData() function to check Swiggy Restaurant data
+      async function checkJsonData(jsonData) {
+        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+
+          // initialize checkData for Swiggy Restaurant data
+          let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+          // if checkData is not undefined then return it
+          if (checkData !== undefined) {
+            return checkData;
+          }
+        }
+      }
+
+      // call the checkJsonData() function which return Swiggy Restaurant data
+      const resData = await checkJsonData(json);
+
+      // update the state variable restaurants with Swiggy API data
+      setAllRestaurants(resData);
+    } catch (error) {
+      console.log(error);
+    }
   }
+  async function cusinelist() {
+    // handle the error using try... catch
+    try {
+      const response = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4871462&lng=73.8200227&page_type=DESKTOP_WEB_LISTING");
+      const json = await response.json();
+
+      // initialize checkJsonData() function to check Swiggy Restaurant data
+      async function cusines(jsonData) {
+        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+
+          // initialize checkData for Swiggy Restaurant data
+          let cusines = json?.data?.cards[i]?.card?.card?.facetList?.filter(ob => ob.label === 'Cuisines')[0].facetInfo;
+          // console.log(cusines)
+          if (cusines !== undefined) {
+            return cusines;
+          }
+        }
+      }
+
+      // call the checkJsonData() function which return Swiggy Restaurant data
+      const cusinelist = await cusines(json);
+
+      // update the state variable restaurants with Swiggy API data
+      setCheckboxFilter(cusinelist);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -92,6 +152,7 @@ const Body = () => {
   
   useEffect(() => {
     getRestaurants();
+    cusinelist();
   },[]);
   
   // console.log("render");
