@@ -10,7 +10,9 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   
-  const [restaurant, setRestaurant] = useState(null);
+  // const [restaurant, setRestaurant] = useState(null);
+  const [restaurant, setRestaurant] = useState(null); // call useState to store the api data in res
+  const [menuItems, setMenuItems] = useState([]);
   const [showIndex, setShowIndex] = useState();
     const {resId} = useParams();
 
@@ -19,6 +21,7 @@ const RestaurantMenu = () => {
     useEffect(() => {
         getRestaurantInfo();
       },[]);
+
   
       async function getRestaurantInfo(){
         const data = await fetch(FETCH_MENU_URL + resId);
@@ -29,11 +32,16 @@ const RestaurantMenu = () => {
 
    
 
-    const categories = restaurant?.cards[2].groupedCard.cardGroupMap.REGULAR?.cards.filter
-    (
-      (c) => c.card?.card?.["@type"] ===
-      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-      );
+    // const categories = restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter
+    // (
+    //   (c) => c.card?.card?.["@type"] ===
+    //   "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    //   );
+      const categories =  restaurant?.cards.find(x=> x.groupedCard)?.
+                                  groupedCard?.cardGroupMap?.REGULAR?.
+                                  cards?.map(x => x.card?.card)?.
+                                  filter(x=> x['@type'] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+                                  console.log(categories);
     
 
     return !restaurant ?  (
@@ -43,8 +51,6 @@ const RestaurantMenu = () => {
         <div className="rest-page">
           <div className="restaurant-details">
           {/* <h1>Restaurant id: {resId}</h1> */}
-          
-         
           <div className="rest-info">
           <div className="rest-menu-page-name">{restaurant?.cards[0].card.card.info.name}</div>
           <span className="rest-otherdetails">{ restaurant?.cards[0].card.card.info.lastMileTravelString}</span>
@@ -63,7 +69,7 @@ const RestaurantMenu = () => {
 
         {
           categories.map((category,index ) => 
-          <RestaurantCategory data ={category?.card?.card} showItems={index === showIndex ? true : false} setShowIndex={() => setShowIndex(index)}/>
+          <RestaurantCategory data ={category} showItems={index === showIndex ? true : false} setShowIndex={() => setShowIndex(index)}/>
           )
         }
         </div>
