@@ -27,7 +27,7 @@ export const Title =  () => (
     const cartItems = useSelector(store => store.cart.items);
     return(
         <>
-        <div className="header">
+        <div className="header sticky">
           <Title />
             <div className="nav-items">
                 <ul>
@@ -40,11 +40,10 @@ export const Title =  () => (
                     <li><Link to="/contact">Contact</Link></li>
                 
                     <li><Link to="/instamart">InstaMart</Link></li>
-                    <li><Link to="/cart" data-testid="cart">Cart - {cartItems.length} items</Link></li>
+                    <li className="cart"><Link to="/cart" data-testid="cart">Cart - {cartItems.length}</Link></li>
                 </ul>
             </div>
-            {/* <h1 data-testid="online-status">{isOnline ? "🟢" : "🔴"}</h1> */}
-            <h1>{isOnline ? "" : "You are Offline"}</h1>
+            {/* <h1 data-testid="online-status">{isOnline ? "🟢 Online" : "🔴"}</h1> */}
            {/* <h1> {user.name}</h1>
             {
               isLoggedIn ?  (

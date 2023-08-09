@@ -8,6 +8,7 @@
     margin: 5px;
     display: flex;
     box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+    padding: 0 10px;
 }
 .nav-items > ul{
     display:flex;
@@ -36,15 +37,15 @@ li a{
     width: 100px;
     height: 100px;
 }
-.resto-card{
-    width: 260px;
-    height: 255px;
-    border: 1px solid rgb(209 199 199);;
-    padding: 10px;
-    text-decoration: none !important; 
-    display:flex;
+.resto-card {
+    border: 1px solid #d1c7c7;
     flex-direction: column;
-    gap:5px;
+    gap: 5px;
+    width: 250px;
+    height: 255px;
+    padding: 10px;
+    display: flex;
+    text-decoration: none !important;
 }
 .resto-card a{
     text-decoration: none !important; 
@@ -76,12 +77,16 @@ li a{
     border-radius: 10px;
 }
 
-.restaurant-list{
-    display:flex;
+
+.restaurant-list {
     flex-wrap: wrap;
-    width:100%;
     gap: 10px;
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
     text-decoration: none !important;
+    justify-content: center;
+    align-items: center;
 }
 .restaurant-list a {
 text-decoration: none !important;
@@ -335,6 +340,12 @@ height:100px;
     align-items: center;
     flex-direction: column;
     gap:10px;
+    padding:10px;
+}
+.addtocartpage{
+    display:flex;
+    flex-direction: column;
+    padding: 10px;
 }
 .myimage{
 
@@ -353,3 +364,126 @@ height:100px;
     flex-direction: row;
     gap: 5px;
 }  
+.network-error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    height:200px;
+    margin-left:300px;
+}
+.sticky{
+    position:sticky;
+    top:0;
+    background: #ffff;
+}
+.footer{
+    font-size:11px;
+    color:purple;
+    padding:10px;
+}
+@media only screen and (max-width: 600px) {
+    .restaurant-list a {
+        text-decoration: none !important;
+        width: 100%;
+    }
+    .resto-card > img {
+        width: 100%;
+        height: 151px;
+    }
+    .resto-card {
+        width: 100%;
+        height: 260px;
+    }
+    .search-container {
+        padding: 0 10px;
+        flex-direction: column;
+    }
+    .search-box {
+        width: 100%;
+    }
+    .search-icon {
+        position: absolute;
+        right: 20px;
+        top: 74px;
+    }
+    .slider-wrapper {
+        height: 50px;
+        padding: 15px 35px;
+    }
+    .cart{
+        font-size:13px;
+    }
+    .logo{
+        display:none;
+    }
+    .aboutme{
+        display:flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .footer{
+        font-size:11px;
+    }
+    .rest-page {
+        width: 100%;
+        padding: 10px;
+    }
+    .restaurant-details {
+        width: 100%;
+    }
+    .width {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .restaurant-list a {
+        text-decoration: none !important;
+        width: 100%;
+    }
+    .resto-card > img {
+        width: 100%;
+        height: 151px;
+    }
+    .resto-card {
+        width: 100%;
+        height: 260px;
+    }
+    .search-container {
+        padding: 0 10px;
+        flex-direction: column;
+    }
+    .search-box {
+        width: 100%;
+    }
+    .search-icon {
+        position: absolute;
+        right: 20px;
+        top: 74px;
+    }
+    .slider-wrapper {
+        height: 50px;
+        padding: 15px 35px;
+    }
+    .cart{
+        font-size:13px;
+    }
+    .logo{
+        display:none;
+    }
+    .footer{
+        font-size:11px;
+    }
+    .rest-page {
+        width: 100%;
+        padding: 10px;
+    }
+    .restaurant-details {
+        width: 100%;
+    }
+    .width {
+        width: 100%;
+    }
+}

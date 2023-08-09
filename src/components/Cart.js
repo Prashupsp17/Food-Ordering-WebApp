@@ -13,7 +13,7 @@ const Cart = () => {
     }
     return(
         <>
-        <div>
+        <div className="addtocartpage">
            <h1>Cart Items - {cartItems.length}</h1>
            <button className="red" onClick={() => {handleClearCart()}}>Clear Cart</button>
            <div className="flex">

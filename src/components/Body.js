@@ -25,19 +25,22 @@ const Body = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           infinite: true,
+          swipeToSlide: true,
         }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           infinite: true,
+          swipeToSlide: true,
         }
       }
     ]
   };
+  
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState();
@@ -166,9 +169,9 @@ const Body = () => {
 
   const isOnline = useOnline();
 
-  if(!isOnline){
-    return <div className="network-error"> 😈 Offline, Please Check Your Internet Connection!!</div>
-  }
+  // if(!isOnline){
+  //   return <div className="network-error"> 😈 Offline, Please Check Your Internet Connection!!</div>
+  // }
    
   //Not render component or early return
    if(!allRestaurants) return null;
@@ -248,7 +251,8 @@ const Body = () => {
               )
             })
           } */}
-           {
+          {
+            isOnline ?
             filteredData.length > 0 ? 
             
               filteredData.map((restaurant) => {
@@ -259,8 +263,12 @@ const Body = () => {
               })
 
               : <div className="nomatch">No Matched Restaurant</div>
+              :  <div className="network-error"> 😈 Offline, Please Check Your Internet Connection!!</div>
+          }
+           
             
-          } 
+            
+          
           
           
         </div>

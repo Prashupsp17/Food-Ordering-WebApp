@@ -2,7 +2,7 @@ import {createContext} from "react";
 
 const UserContext = createContext({
     user : {
-        name : "dummyName",
+        name : "Prashant Shinde",
         email: "shindeprashant967@gmail.com",
         },
     });

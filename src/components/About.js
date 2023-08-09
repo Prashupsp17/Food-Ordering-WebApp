@@ -53,12 +53,14 @@ class About extends React.Component{
             
             <span className="developer">Frontend React Js Developer</span>
             <img src={prashant} className="myimage"></img>
+            <div className="aboutme">
             <span>Hi... I am Prashant Shinde loves React  </span>
             <span>Works @AppBell Technologies Pvt Ltd Baner, Pune</span>
             <span>1 year experience as a React Developer</span> 
             <p>Developed 2 company projects from scratch ,Highly Responsive Website </p>
             <p>Tech Stack used  React Js <img src={react}/> , Javascript & Advance Javascript  <img src={javascript}/> ,  HTML5 <img src={html}/> ,  CSS3 <img src={css}/> ,Tailwind <img src={tailwind}/> ,  Bootstrap 5   <img src={bootstrap}/>
                </p>
+               </div>
             </div>
         )
     }

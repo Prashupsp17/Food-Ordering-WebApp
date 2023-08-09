@@ -5,7 +5,6 @@ import downarrow from '../images/down-arrow-svgrepo-com.svg';
 
 
 const RestaurantCategory = ({data, showItems, setShowIndex}) => {
-  
   const handleClick = () => {
     setShowIndex();
   }
