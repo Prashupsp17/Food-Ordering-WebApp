@@ -66,12 +66,13 @@ const RestaurantMenu = () => {
           </div>
           
      
-
+<div className="dishes-list">
         {
           categories.map((category,index ) => 
           <RestaurantCategory data ={category} showItems={index === showIndex ? true : false} setShowIndex={() => setShowIndex(index)}/>
           )
         }
+        </div>
         </div>
          
     )

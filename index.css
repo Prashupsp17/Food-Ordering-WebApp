@@ -1,6 +1,20 @@
 #container{
     background-color: red;
 }
+.cartcount{
+    position: absolute;
+    top: 13px;
+    right: 37px;
+    color: white;
+    background: orange;
+    border-radius: 50%;
+    width: 12px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 .header{
     height: 50px;
@@ -128,9 +142,12 @@ text-decoration: none !important;
     border:none;
     padding:10px;
     margin:10px;
+    width: 10%;
 }
-.flex{
-    display:flex;
+.cart-page{
+    display: flex;
+flex-direction: row;
+gap: 10px;
 }
 .restaurant-wrapper{
     display:flex;
@@ -230,7 +247,6 @@ a {
     height:400px;
     color:orangered;
     align-items: center;
-    margin-left: 475px;
 }
 .width{
     width:60%;
@@ -342,6 +358,12 @@ height:100px;
     gap:10px;
     padding:10px;
 }
+.aboutme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .addtocartpage{
     display:flex;
     flex-direction: column;
@@ -376,6 +398,7 @@ height:100px;
     position:sticky;
     top:0;
     background: #ffff;
+    z-index: 99;
 }
 .footer{
     font-size:11px;
@@ -436,6 +459,26 @@ height:100px;
     .width {
         width: 100%;
     }
+    .dishes-list{
+        padding:10px;
+       }
+       .cartcount{
+       right: 21px;
+       }
+       .cart-page{
+    flex-direction: column;
+    }
+    .red{
+        width: 30%;
+      } 
+      .nomatch {
+        color: #ff4500;
+        justify-content: center;
+        align-items: center;
+        height: 172px;
+        font-size: 15px;
+        display: flex;
+    }
 }
 
 @media only screen and (max-width: 320px) {
@@ -480,10 +523,32 @@ height:100px;
         width: 100%;
         padding: 10px;
     }
-    .restaurant-details {
+    .res .red{
+        width: 30%;
+      } taurant-details {
         width: 100%;
     }
     .width {
         width: 100%;
+    }
+   .dishes-list{
+    padding:10px;
+   }
+   .cartcount{
+    right: 21px;
+    }
+    .cart-page{
+        flex-direction: column;
+        }
+      .red{
+        width: 30%;
+      } 
+      .nomatch {
+        color: #ff4500;
+        justify-content: center;
+        align-items: center;
+        height: 172px;
+        font-size: 15px;
+        display: flex;
     }
 }

@@ -16,7 +16,7 @@ const Cart = () => {
         <div className="addtocartpage">
            <h1>Cart Items - {cartItems.length}</h1>
            <button className="red" onClick={() => {handleClearCart()}}>Clear Cart</button>
-           <div className="flex">
+           <div className="cart-page">
            {
                cartItems.map((item) =>   <FoodItem key={item.id} {...item} /> )
            }

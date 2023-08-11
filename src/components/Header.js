@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
+import cart from "../images/cart.png";
+
 
 const loggedInUser = () => {
    return true;
@@ -40,7 +42,7 @@ export const Title =  () => (
                     <li><Link to="/contact">Contact</Link></li>
                 
                     <li><Link to="/instamart">InstaMart</Link></li>
-                    <li className="cart"><Link to="/cart" data-testid="cart">Cart - {cartItems.length}</Link></li>
+                    <li className="cart"><Link to="/cart" data-testid="cart"><img src={cart} /><div className="cartcount">{cartItems.length}</div></Link></li>
                 </ul>
             </div>
             {/* <h1 data-testid="online-status">{isOnline ? "🟢 Online" : "🔴"}</h1> */}
