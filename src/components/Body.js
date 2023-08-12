@@ -225,7 +225,7 @@ const Body = () => {
                 checkboxfilters.map((cusine,index) => {
                   return <>
                   <div className="checkbox-wrapper">
-                  <input type="checkbox" value={cusine?.label}  checked={selectedCategories.includes(cusine?.label)}
+                  <input type="checkbox" className="form-check-input" value={cusine?.label}  checked={selectedCategories.includes(cusine?.label)}
             onChange={handleCheckboxChange}  key={index}/><label>{cusine?.label}</label>
                   </div>
          
