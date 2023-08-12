@@ -2,6 +2,9 @@ import React from 'react'
 import {IMG_CDN_URL} from "../contants";
 import {addItem} from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const ItemList = ({items}) => {
     
@@ -9,6 +12,7 @@ const ItemList = ({items}) => {
 
   const AddFoodItem = (items) => {
     dispatch(addItem(items));
+    toast.success("Item Added To Cart");
   }
   return (
     <div>
@@ -28,6 +32,8 @@ const ItemList = ({items}) => {
 }
 <button onClick={()=> AddFoodItem(item)} className="menu-green">Add</button>
 </div>
+
+< ToastContainer autoClose={1000} />
 
         </div>
             ))}
