@@ -1,5 +1,5 @@
 import React from 'react'
-import {IMG_CDN_URL} from "../contants";
+import {IMG_CDN_URL,NEW_IMG_CDN_URL} from "../contants";
 import {addItem} from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 import { ToastContainer } from 'react-toastify';
@@ -28,7 +28,7 @@ const ItemList = ({items}) => {
 </div>
 <div className="image-addbutton">
 {
-  item.card.info.imageId ? <img src={IMG_CDN_URL + item.card.info.imageId} className="menu-images"/> : ""
+  item.card.info.imageId ? <img src={NEW_IMG_CDN_URL + item.card.info.imageId} className="menu-images"/> : ""
 }
 <button onClick={()=> AddFoodItem(item)} className="menu-green">Add</button>
 </div>

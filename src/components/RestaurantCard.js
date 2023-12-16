@@ -1,4 +1,4 @@
-import {IMG_CDN_URL} from "../contants";
+import {IMG_CDN_URL,NEW_IMG_CDN_URL} from "../contants";
 import { useContext  } from "react";
 import UserContext from "../utils/UserContext";
 import star from "../images/star.png";
@@ -8,7 +8,7 @@ const RestaurantCard = (props) => {
       const {user} = useContext(UserContext);
       return (
           <div className="resto-card">
-              <img src={IMG_CDN_URL + props.resData.cloudinaryImageId}></img>
+              <img src={NEW_IMG_CDN_URL + props.resData.cloudinaryImageId}></img>
               <div className="rest-name">{props.resData.name}</div>
               <div className="card-bottom">
               <span className="green">{props.resData.avgRating} <img src={star}/></span>
