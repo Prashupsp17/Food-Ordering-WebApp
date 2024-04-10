@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
       async function getRestaurantInfo(){
         const data = await fetch(FETCH_MENU_URL + resId);
         const json = await data.json();
-        console.log(json)
+        // console.log(json)
         setRestaurant(json.data);
       }
     
@@ -53,16 +53,16 @@ const RestaurantMenu = () => {
           <div className="restaurant-details">
           {/* <h1>Restaurant id: {resId}</h1> */}
           <div className="rest-info">
-          <div className="rest-menu-page-name">{restaurant?.cards[0].card.card.info.name}</div>
-          <span className="rest-otherdetails">{ restaurant?.cards[0].card.card.info.lastMileTravelString}</span>
-          <span className="rest-otherdetails">{ restaurant?.cards[0].card.card.info.areaName}</span>
-          <span className="rest-otherdetails">{restaurant?.cards[0].card.card.info.city}</span>
+          <div className="rest-menu-page-name">{restaurant?.cards[2].card.card.info.name}</div>
+          <span className="rest-otherdetails">{ restaurant?.cards[2].card.card.info.lastMileTravelString}</span>
+          <span className="rest-otherdetails">{ restaurant?.cards[2].card.card.info.areaName}</span>
+          <span className="rest-otherdetails">{restaurant?.cards[2].card.card.info.city}</span>
          
-          <span className="rest-otherdetails">{restaurant?.cards[0].card.card.info.costForTwoMsg}</span>
-          <span className="rest-otherdetails">{restaurant?.cards[0].card.card.info.costForTwoMessage}</span>
+          <span className="rest-otherdetails">{restaurant?.cards[2].card.card.info.costForTwoMsg}</span>
+          <span className="rest-otherdetails">{restaurant?.cards[2].card.card.info.costForTwoMessage}</span>
           </div>
          
-          <div className="green">{restaurant?.cards[0].card.card.info.avgRating}</div>
+          <div className="green">{restaurant?.cards[2].card.card.info.avgRating}</div>
           </div>
           </div>
           

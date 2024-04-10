@@ -41225,7 +41225,7 @@ const RestaurantMenu = ()=>{
     async function getRestaurantInfo() {
         const data = await fetch((0, _contants.FETCH_MENU_URL) + resId);
         const json = await data.json();
-        console.log(json);
+        // console.log(json)
         setRestaurant(json.data);
     }
     // const categories = restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter
@@ -41251,7 +41251,7 @@ const RestaurantMenu = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "rest-menu-page-name",
-                                    children: restaurant?.cards[0].card.card.info.name
+                                    children: restaurant?.cards[2].card.card.info.name
                                 }, void 0, false, {
                                     fileName: "src/components/RestaurantMenu.js",
                                     lineNumber: 56,
@@ -41259,7 +41259,7 @@ const RestaurantMenu = ()=>{
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                     className: "rest-otherdetails",
-                                    children: restaurant?.cards[0].card.card.info.lastMileTravelString
+                                    children: restaurant?.cards[2].card.card.info.lastMileTravelString
                                 }, void 0, false, {
                                     fileName: "src/components/RestaurantMenu.js",
                                     lineNumber: 57,
@@ -41267,7 +41267,7 @@ const RestaurantMenu = ()=>{
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                     className: "rest-otherdetails",
-                                    children: restaurant?.cards[0].card.card.info.areaName
+                                    children: restaurant?.cards[2].card.card.info.areaName
                                 }, void 0, false, {
                                     fileName: "src/components/RestaurantMenu.js",
                                     lineNumber: 58,
@@ -41275,7 +41275,7 @@ const RestaurantMenu = ()=>{
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                     className: "rest-otherdetails",
-                                    children: restaurant?.cards[0].card.card.info.city
+                                    children: restaurant?.cards[2].card.card.info.city
                                 }, void 0, false, {
                                     fileName: "src/components/RestaurantMenu.js",
                                     lineNumber: 59,
@@ -41283,7 +41283,7 @@ const RestaurantMenu = ()=>{
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                     className: "rest-otherdetails",
-                                    children: restaurant?.cards[0].card.card.info.costForTwoMsg
+                                    children: restaurant?.cards[2].card.card.info.costForTwoMsg
                                 }, void 0, false, {
                                     fileName: "src/components/RestaurantMenu.js",
                                     lineNumber: 61,
@@ -41291,7 +41291,7 @@ const RestaurantMenu = ()=>{
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                     className: "rest-otherdetails",
-                                    children: restaurant?.cards[0].card.card.info.costForTwoMessage
+                                    children: restaurant?.cards[2].card.card.info.costForTwoMessage
                                 }, void 0, false, {
                                     fileName: "src/components/RestaurantMenu.js",
                                     lineNumber: 62,
@@ -41305,7 +41305,7 @@ const RestaurantMenu = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "green",
-                            children: restaurant?.cards[0].card.card.info.avgRating
+                            children: restaurant?.cards[2].card.card.info.avgRating
                         }, void 0, false, {
                             fileName: "src/components/RestaurantMenu.js",
                             lineNumber: 65,
