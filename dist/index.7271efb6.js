@@ -35470,7 +35470,7 @@ const Body = ()=>{
     async function getRestaurants() {
         // handle the error using try... catch
         try {
-            const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+            const response = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
             const json = await response.json();
             // initialize checkJsonData() function to check Swiggy Restaurant data
             async function checkJsonData(jsonData) {
@@ -35492,7 +35492,7 @@ const Body = ()=>{
     async function cusinelist() {
         // handle the error using try... catch
         try {
-            const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+            const response = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
             const json = await response.json();
             // initialize checkJsonData() function to check Swiggy Restaurant data
             async function cusines(jsonData) {
